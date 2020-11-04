@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+* {
+  font-family: "Fredericka the Great", cursive;
+  padding: 0;
+  font-size: 32px;
+}
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #000000,
+    #291e24,
+    #4a3748,
+    #665473,
+    #7b75a3,
+    #8b8cbc,
+    #9ba4d4,
+    #acbced,
+    #c5cbf1,
+    #dadcf5,
+    #eeedfa,
+    #ffffff
+  );
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  line-height: 2.5em;
+}
+
+#top {
+  text-align: center;
+  margin-left: 5%;
+}
+
+button {
+  padding: 5px;
+}
+button:hover {
+  background-color: #016fb9;
+  color: white;
+}
+
+.pictures {
+  display: flex;
+  align-content: center;
+}
+
+img {
+  width: 33.3%;
+  height: auto;
+}
+
+.min-pictures {
+  padding: 5px;
+  opacity: 0.5;
+}
+
+.min-pictures:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Responsive 1000px */
+@media only screen and (max-width: 1045px) {
+  * {
+    font-size: 16px;
+  }
+}
+/* Responsive 500px */
+
+@media only screen and (max-width: 500px) {
+  * {
+    font-size: 8px;
+    color: black;
+  }
+
+  .pictures {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  h1 {
+    color: black;
+  }
+  img {
+    width: 40vw;
+    height: auto;
+  }
+  body {
+    background-color: #8bc6ec;
+    background-image: linear-gradient(
+      90deg,
+      #8bc6ec 0%,
+      #9599e2 50%,
+      #ffffff 100%
+    );
+  }
+}
