@@ -5,6 +5,34 @@ const displayInfo = document.querySelector("div.bottom");
 const searchValue = document.querySelector(".search-input");
 const getValue = () => searchValue.value;
 
+// setting speechrecognition for all browsers
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+// new variable with speechRecognistion
+
+let speechRecog = new window.SpeechRecognition();
+
+//start SpeechRecognistion and game
+speechRecog.start();
+
+//Capture user speakx
+function speakMyWord(e) {
+  const spokenWord = e.results[0][0].transcript;
+  console.log(e);
+  displayUser(spokenWord);
+  // checkNumber(spokenWord);
+}
+//speak result
+speechRecog.addEventListener("result", speakMyWord);
+
+//end SR service
+speechRecog.addEventListener("end", () => speechRecog.start());
+
+function endSpeechRec() {
+  return speechRecog.addEventListener("end", () => speechRecog.stop());
+}
+
 async function displayUser(user) {
   const response = await fetch(`${baseURL}${user}`, {
     method: "GET",
